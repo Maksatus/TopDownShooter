@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+
 namespace Characters
 {
    public class MoveCharactres : MonoBehaviour
@@ -7,6 +8,9 @@ namespace Characters
       [SerializeField] private CharacterInfo characterInfo;
       [SerializeField] private NavMeshAgent navMeshAgent;
       [SerializeField] private Camera cameraMain;
+
+      private Quaternion _rotation;
+      private bool _isRotationNavMeshAgent;
 
       private void Start()
       {
@@ -19,26 +23,44 @@ namespace Characters
       {
          if (Input.GetMouseButton(0))
          {
-            var ray = cameraMain.ScreenPointToRay(Input.mousePosition);
-            var hisSomething = Physics.Raycast(ray, out var hitInfo);
-
-            if (hisSomething)
-            {
-               var clickWordPoint = hitInfo.point;
-               navMeshAgent.SetDestination(clickWordPoint);
-            }
+            LeftMouseButton();
          }
          else if (Input.GetMouseButton(1))
          {
-            var ray = cameraMain.ScreenPointToRay(Input.mousePosition);
-            var hisSomething = Physics.Raycast(ray, out var hitInfo);
-
-            if (hisSomething)
-            {
-               var clickWordPoint = hitInfo.point;
-            
-            }
+            RightMouseButton();
          }
+         if (!_isRotationNavMeshAgent)
+         {
+            transform.rotation = Quaternion.Lerp(transform.rotation,_rotation,Time.deltaTime * 5f);   
+         }
+      }
+
+      private void LeftMouseButton()
+      {
+         if (GettingPoint(out var hitInfo))
+            return;
+         
+         _isRotationNavMeshAgent = true;
+         var clickWordPoint = hitInfo.point;
+         navMeshAgent.SetDestination(clickWordPoint);
+      }
+      
+      private void RightMouseButton()
+      {
+         if (GettingPoint(out var hitInfo))
+            return;
+         
+         _isRotationNavMeshAgent = false;
+         var clickWordPoint = new Vector3(hitInfo.point.x,transform.position.y,hitInfo.point.z);
+         var direction = clickWordPoint - transform.position;
+         _rotation = Quaternion.LookRotation(direction);
+      }
+      private bool GettingPoint(out RaycastHit hitInfo)
+      {
+         var ray = cameraMain.ScreenPointToRay(Input.mousePosition);
+         var hisSomething = Physics.Raycast(ray, out hitInfo);
+
+         return !hisSomething;
       }
    }
 }

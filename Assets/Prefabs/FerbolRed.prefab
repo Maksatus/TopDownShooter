@@ -4910,6 +4910,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   impactVfx: {fileID: 6164224051104441654, guid: b803a4dc1218ed8469a8f412cfacbaa3, type: 3}
+  magicInfo: {fileID: 11400000, guid: 26811b9c415e31741b9ef51b92968b69, type: 2}
 --- !u!1 &2712867868763512881
 GameObject:
   m_ObjectHideFlags: 0

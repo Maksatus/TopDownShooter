@@ -20,3 +20,4 @@ MonoBehaviour:
   fireRate: 5
   arcRange: 1
   explosionRange: 0
+  lifeTime: 5

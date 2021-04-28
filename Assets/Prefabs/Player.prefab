@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1063974348057160118}
   - component: {fileID: 4375899618180613623}
   - component: {fileID: -2168149431856800734}
-  - component: {fileID: 8515482383172486339}
+  - component: {fileID: 8202163203669635525}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPoint: {fileID: 734991214166463833}
---- !u!114 &8515482383172486339
+--- !u!114 &8202163203669635525
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,9 +209,8 @@ GameObject:
   - component: {fileID: 734991214166463833}
   - component: {fileID: 1901310489233753195}
   - component: {fileID: 7896150419012654094}
-  - component: {fileID: 9105515215889643940}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -281,16 +280,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &9105515215889643940
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4587928718083851961}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}

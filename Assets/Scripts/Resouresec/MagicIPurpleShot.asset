@@ -15,7 +15,9 @@ MonoBehaviour:
   id: PurpleShot
   projectile: {fileID: 333105859771712151, guid: 1eafa38bf39a5364f8299c75168326fe, type: 3}
   impact: {fileID: 6164224051104441654, guid: b803a4dc1218ed8469a8f412cfacbaa3, type: 3}
+  damage: 0
   speed: 30
-  fireRate: 5
+  fireRate: 3
   arcRange: 1
   explosionRange: 0
+  lifeTime: 5
