@@ -353,8 +353,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 476899193}
-  _characterInfo: {fileID: 11400000, guid: 57ab2ae6592430d46abc727214043c1e, type: 2}
-  _camera: {fileID: 1237087200}
+  characterInfo: {fileID: 11400000, guid: 57ab2ae6592430d46abc727214043c1e, type: 2}
+  cameraMain: {fileID: 1237087200}
 --- !u!4 &476899193
 Transform:
   m_ObjectHideFlags: 0

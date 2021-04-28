@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1063974348057160118}
   - component: {fileID: 4375899618180613623}
   - component: {fileID: -2168149431856800734}
+  - component: {fileID: 8515482383172486339}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -137,6 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterInfo: {fileID: 11400000, guid: 57ab2ae6592430d46abc727214043c1e, type: 2}
   navMeshAgent: {fileID: 1063974348057160118}
+  cameraMain: {fileID: 0}
 --- !u!114 &-2168149431856800734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,8 +151,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de2ef1fa2baba744a42efb4a2e25dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magicInfo: {fileID: 11400000, guid: 038b51b7cfac6114491582abdbdaf495, type: 2}
   startPoint: {fileID: 734991214166463833}
+--- !u!114 &8515482383172486339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657635957630372956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d51b500e82d0c43b9efa17648c5dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magicInfo:
+  - {fileID: 11400000, guid: 038b51b7cfac6114491582abdbdaf495, type: 2}
+  - {fileID: 11400000, guid: 26811b9c415e31741b9ef51b92968b69, type: 2}
+  castMagic: {fileID: -2168149431856800734}
 --- !u!1 &1126877378785927529
 GameObject:
   m_ObjectHideFlags: 0
