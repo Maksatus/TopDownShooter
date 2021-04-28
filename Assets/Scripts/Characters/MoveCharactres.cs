@@ -8,6 +8,7 @@ namespace Characters
       [SerializeField] private CharacterInfo characterInfo;
       [SerializeField] private NavMeshAgent navMeshAgent;
       [SerializeField] private Camera cameraMain;
+      [SerializeField] private float speedRotate = 6f;
 
       private Quaternion _rotation;
       private bool _isRotationNavMeshAgent;
@@ -31,7 +32,7 @@ namespace Characters
          }
          if (!_isRotationNavMeshAgent)
          {
-            transform.rotation = Quaternion.Lerp(transform.rotation,_rotation,Time.deltaTime * 5f);   
+            transform.rotation = Quaternion.Lerp(transform.rotation,_rotation,Time.deltaTime * speedRotate);   
          }
       }
 

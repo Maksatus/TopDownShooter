@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Characters.Ability
@@ -7,24 +8,30 @@ namespace Characters.Ability
         [SerializeField] private MagicInfo[] magicInfo;
         [SerializeField] private CastMagic castMagic;
         
-        private float _timeToFire; 
-        void Update()
+        private float[] _timeToFire;
+
+        private void Start()
+        {
+            _timeToFire = new float[magicInfo.Length];
+        }
+        private void Update()
         {
            Cast();
         }
         private void Cast()
         {
-            if (Input.GetMouseButton(1) && Time.time >= _timeToFire)
+            if (Input.GetMouseButton(1) && Time.time >= _timeToFire[0])
             {
-                _timeToFire = Time.time + 1 / magicInfo[0].FireRate;
+                _timeToFire[0] = Time.time + magicInfo[0].FireRate;
                 castMagic.ShootProjectile(magicInfo[0]);
             }
-            else if (Input.GetKeyDown(KeyCode.Q) && Time.time >= _timeToFire)
+            else if (Input.GetKeyDown(KeyCode.Q) && Time.time >= _timeToFire[1])
             {
-                _timeToFire = Time.time + 1 / magicInfo[1].FireRate;
+                _timeToFire[1] = Time.time + magicInfo[1].FireRate;
                 castMagic.ShootProjectile(magicInfo[1]);
             }
         }
+
     }
     
 }
