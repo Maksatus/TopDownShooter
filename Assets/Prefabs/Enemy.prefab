@@ -103,6 +103,7 @@ MonoBehaviour:
   enemyInfo: {fileID: 11400000, guid: 5967433c45a9dd04c9c55cc0dac5931b, type: 2}
   animator: {fileID: 8524960749527652826}
   pathfindingMovement: {fileID: 6288060363244589730}
+  vfxObject: {fileID: 748391012360897630, guid: 38cfffe440364fe46995791569d458bf, type: 3}
 --- !u!136 &4772152269376326127
 CapsuleCollider:
   m_ObjectHideFlags: 0

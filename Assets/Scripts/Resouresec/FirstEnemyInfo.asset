@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: FirstEnemy
   gameObject: {fileID: 6288060363244589728, guid: cde776548366295409f79e65575736c1, type: 3}
-  speed: 1
-  angularSpeed: 200
-  acceleration: 200
+  speed: 1.2
+  angularSpeed: 400
+  acceleration: 400
   damageValue: 5
   health: 100
   attackRange: 1
   targetRange: 15
   impactSpeed: 2
-  animationSpeed: 2.8
+  animationSpeed: 3

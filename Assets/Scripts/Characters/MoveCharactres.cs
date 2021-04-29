@@ -72,7 +72,6 @@ namespace Characters
 
       private void AnimationCharacter()
       {
-         Debug.Log(navMeshAgent.velocity.magnitude);
          animator.SetFloat(Speed,navMeshAgent.velocity.magnitude);
       }
    }

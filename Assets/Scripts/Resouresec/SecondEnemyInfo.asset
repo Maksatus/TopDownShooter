@@ -15,11 +15,11 @@ MonoBehaviour:
   id: FirstEnemy
   gameObject: {fileID: 528116682804630598, guid: f18771943ead4a7439f3b48e139c845d, type: 3}
   speed: 1
-  angularSpeed: 200
-  acceleration: 200
+  angularSpeed: 400
+  acceleration: 400
   damageValue: 5
   health: 100
   attackRange: 1
   targetRange: 10
   impactSpeed: 2
-  animationSpeed: 1
+  animationSpeed: 0.8

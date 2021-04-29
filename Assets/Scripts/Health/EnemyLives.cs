@@ -8,6 +8,7 @@ namespace Health
         [SerializeField] private EnemyInfo enemyInfo;
         [SerializeField] private Animator animator;
         [SerializeField] private NavMeshAgent pathfindingMovement;
+        [SerializeField] private GameObject vfxObject;
 
         private HealthSystem _healthSystem;
         private static readonly int Death = Animator.StringToHash("Death");
@@ -24,9 +25,11 @@ namespace Health
             }
             if (_healthSystem.GetHealth()<=0)
             {
+                var obj = Instantiate(vfxObject,transform.position, Quaternion.identity);
                 pathfindingMovement.speed = 0;
                 animator.SetTrigger(Death);
-                Destroy(gameObject,3f);
+                Destroy(gameObject,2.7f);
+                Destroy(obj,4f);
             }
         }
     }   

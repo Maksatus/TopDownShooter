@@ -10,7 +10,6 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private Animator animator;
     
     private static readonly int Speed = Animator.StringToHash("Speed");
-    private static readonly int LightAttack = Animator.StringToHash("Attack");
 
     private float _nextShootTimer;
     private enum State
@@ -24,6 +23,7 @@ public class EnemyAI : MonoBehaviour
     private Vector3 _roamPosition;
     private float _nextShootTime;
     private State _state;
+    private static readonly int SpeedAnimation = Animator.StringToHash("SpeedAnimation");
 
     private void Awake()
     {
@@ -80,7 +80,7 @@ public class EnemyAI : MonoBehaviour
     }
     
     private void AnimationCharacter()
-    {
+    {animator.SetFloat(SpeedAnimation,enemyInfo.AnimationSpeed);
         animator.SetFloat(Speed,pathfindingMovement.velocity.magnitude);
     }
 }
