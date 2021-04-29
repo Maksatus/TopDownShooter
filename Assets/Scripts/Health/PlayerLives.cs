@@ -4,17 +4,20 @@ namespace Health
 {
     public class PlayerLives : MonoBehaviour
     {
-        [SerializeField] private HealthBar healthBar;
+        private HealthSystem _healthSystem;
         private void Start()
         {
-            HealthSystem healthSystem = new HealthSystem(100);
-            healthBar.Setup(healthSystem);
-            
-            Debug.Log("Health" + healthSystem.GetHealth());
-            healthSystem.Damage(30);
-            Debug.Log("Health" + healthSystem.GetHealth());
-            healthSystem.Heal(20);
-            Debug.Log("Health" + healthSystem.GetHealth());
+            _healthSystem = new HealthSystem(100);
+        }
+        
+
+        private void HitMe(int damageAmount)
+        {
+            HealthSystemUI.Instance.TakeDamage(damageAmount);
+        }
+        private void HealMe(int healAmount)
+        {
+            HealthSystemUI.Instance.HealDamage(healAmount);
         }
     }
 }

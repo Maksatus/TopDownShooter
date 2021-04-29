@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] private MagicInfo magicInfo;
+    public MagicInfo MagicInfo => magicInfo;
 
     private void OnEnable()
     {

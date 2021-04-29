@@ -23,7 +23,6 @@ namespace Health
             {
                 _health = 0;
             }
-            HealthSystemUI.Instance.TakeDamage(damageAmount);
         }
         public void Heal(int healAmount)
         {
@@ -32,7 +31,6 @@ namespace Health
             {
                 _health = _healthMax;
             }
-            HealthSystemUI.Instance.HealDamage(healAmount);
         }
 
         public float GetHealthPercent()
