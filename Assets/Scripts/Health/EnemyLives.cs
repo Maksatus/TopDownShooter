@@ -14,7 +14,7 @@ namespace Health
 
         private void OnCollisionEnter(Collision other)
         {
-            if (other.gameObject.TryGetComponent<Projectile>(out Projectile projectile))
+            if (other.gameObject.TryGetComponent<Projectile>(out var projectile))
             {
                _healthSystem.Damage(projectile.MagicInfo.Damage);
             }

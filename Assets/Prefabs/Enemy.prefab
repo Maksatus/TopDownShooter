@@ -116,6 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathfindingMovement: {fileID: 6288060363244589730}
   enemyAttack: {fileID: 1883821380584532824}
+  enemyInfo: {fileID: 11400000, guid: 5967433c45a9dd04c9c55cc0dac5931b, type: 2}
 --- !u!195 &6288060363244589730
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -150,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d658e46379e95c4283055d54ffceabe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 2
+  _enemyInfo: {fileID: 11400000, guid: 5967433c45a9dd04c9c55cc0dac5931b, type: 2}
 --- !u!114 &77241918004575673
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,8 +11,9 @@ namespace Health
         }
         
 
-        private void HitMe(int damageAmount)
+        public void HitPlayer(int damageAmount)
         {
+            _healthSystem.Damage(damageAmount);
             HealthSystemUI.Instance.TakeDamage(damageAmount);
         }
         private void HealMe(int healAmount)

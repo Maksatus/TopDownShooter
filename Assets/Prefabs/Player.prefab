@@ -3168,6 +3168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d89deda212ceacd47a173a37211442ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLives: {fileID: 5154992741462858512}
 --- !u!114 &5154992741462858512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3180,7 +3181,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e8748fdfaa64f9bbc45f8e24dfdde29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 9218426903016179889, guid: a491dc1b18d13bd449d4820e1b8e233d, type: 3}
 --- !u!195 &5782711036840053711
 NavMeshAgent:
   m_ObjectHideFlags: 0

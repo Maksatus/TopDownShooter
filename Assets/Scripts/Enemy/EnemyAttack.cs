@@ -1,13 +1,17 @@
+using Health;
 using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    [SerializeField] private float attackRange = 2f;
-    public void Attack()
+    [SerializeField] private EnemyInfo _enemyInfo;
+
+    private PlayerLives _playerLives;
+    public void Attack(Player player)
     {
-       
+        _playerLives = player.GetHealthPlayer();
+        _playerLives.HitPlayer(_enemyInfo.DamageValue);
     }
-    public static void isAtack()
+    public  void isAtack(bool flag)
     {
         
     }

@@ -4,7 +4,11 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
+    [SerializeField] private NavMeshAgent pathfindingMovement;
+    [SerializeField] private EnemyAttack enemyAttack;
+    [SerializeField] private EnemyInfo enemyInfo;
 
+    private float _nextShootTimer;
     private enum State
     {
         Idle,
@@ -12,9 +16,7 @@ public class EnemyAI : MonoBehaviour
         ShootingTarget,
         GoingBackToStart,
     }
-    
-    [SerializeField] private NavMeshAgent pathfindingMovement;
-    [SerializeField] private EnemyAttack enemyAttack;
+
     private Vector3 _roamPosition;
     private float _nextShootTime;
     private State _state;
@@ -26,26 +28,34 @@ public class EnemyAI : MonoBehaviour
 
     private void Start()
     {
+        pathfindingMovement.speed = enemyInfo.Speed;
+        pathfindingMovement.angularSpeed = enemyInfo.AngularSpeed;
+        pathfindingMovement.acceleration = enemyInfo.Acceleration;
     }
 
     private void Update()
     {
-        FindTarget();
         switch (_state)
         {
             case State.Idle:
+                FindTarget();
                 break;
             case State.ChaseTarget:
+
                 pathfindingMovement.SetDestination(Player.Instance.GetPosition());
-                float attackRange = 2f;
-                if (Vector3.Distance(transform.position,Player.Instance.GetPosition()) < attackRange)
+
+                if (Vector3.Distance(transform.position, Player.Instance.GetPosition()) < enemyInfo.AttackRange)
                 {
                     pathfindingMovement.isStopped = true;
-                    enemyAttack.Attack();
+                    if (Time.time > _nextShootTime)
+                    {
+                        enemyAttack.Attack(Player.Instance);
+                        _nextShootTime = Time.time + enemyInfo.ImpactSpeed;
+                    }
                 }
                 else
                 {
-                    EnemyAttack.isAtack();
+                    enemyAttack.isAtack(false);
                     pathfindingMovement.isStopped = false;
                 }
                 break;
@@ -56,16 +66,12 @@ public class EnemyAI : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException();
         }
-       
     }
     
-
     private void FindTarget()
     {
-        var targetRange = 20f;
-        if (Vector3.Distance(transform.position, Player.Instance.GetPosition()) < targetRange)
+        if (Vector3.Distance(transform.position, Player.Instance.GetPosition()) < enemyInfo.TargetRange)
         {
-            // Player within target range
             _state = State.ChaseTarget;
         }
     }
