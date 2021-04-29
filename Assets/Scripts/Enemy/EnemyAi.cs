@@ -12,8 +12,9 @@ public class EnemyAI : MonoBehaviour
         ShootingTarget,
         GoingBackToStart,
     }
-
+    
     [SerializeField] private NavMeshAgent pathfindingMovement;
+    [SerializeField] private EnemyAttack enemyAttack;
     private Vector3 _roamPosition;
     private float _nextShootTime;
     private State _state;
@@ -40,9 +41,11 @@ public class EnemyAI : MonoBehaviour
                 if (Vector3.Distance(transform.position,Player.Instance.GetPosition()) < attackRange)
                 {
                     pathfindingMovement.isStopped = true;
+                    enemyAttack.Attack();
                 }
                 else
                 {
+                    EnemyAttack.isAtack();
                     pathfindingMovement.isStopped = false;
                 }
                 break;
