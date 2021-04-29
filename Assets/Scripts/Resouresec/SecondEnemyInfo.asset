@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d93b30112c0d408d8087b02556f2c111, type: 3}
-  m_Name: FirstEnemyInfo
+  m_Name: SecondEnemyInfo
   m_EditorClassIdentifier: 
   id: FirstEnemy
-  gameObject: {fileID: 6288060363244589728, guid: cde776548366295409f79e65575736c1, type: 3}
+  gameObject: {fileID: 528116682804630598, guid: f18771943ead4a7439f3b48e139c845d, type: 3}
   speed: 1
   angularSpeed: 200
   acceleration: 200
   damageValue: 5
   health: 100
   attackRange: 1
-  targetRange: 15
+  targetRange: 10
   impactSpeed: 2
-  animationSpeed: 2.8
+  animationSpeed: 1

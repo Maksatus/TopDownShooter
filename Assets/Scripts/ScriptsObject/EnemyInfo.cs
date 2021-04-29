@@ -13,6 +13,7 @@ public class EnemyInfo : ScriptableObject
     [SerializeField] private int attackRange;
     [SerializeField] private int targetRange;
     [SerializeField] private float impactSpeed;
+    [SerializeField] private float animationSpeed;
 
     public string Id => this.id;
     public GameObject GameObject => gameObject;
@@ -24,6 +25,6 @@ public class EnemyInfo : ScriptableObject
     public int Health => health;
     public int TargetRange => targetRange;
     public float ImpactSpeed => impactSpeed;
-    
+    public float AnimationSpeed => animationSpeed;
     
 }
