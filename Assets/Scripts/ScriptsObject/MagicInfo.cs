@@ -14,6 +14,7 @@ public class MagicInfo : ScriptableObject
     [SerializeField] private float lifeTime;
     [SerializeField] private float timeCast;
     [SerializeField] private Vector3 spawOffset;
+    
     public string Id => this.id;
     public GameObject Projectile => projectile;
     public GameObject Impact => impact;
