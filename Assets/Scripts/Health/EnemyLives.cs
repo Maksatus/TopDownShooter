@@ -1,12 +1,16 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace Health
 {
     public class EnemyLives : MonoBehaviour
     {
         [SerializeField] private EnemyInfo enemyInfo;
+        [SerializeField] private Animator animator;
+        [SerializeField] private NavMeshAgent pathfindingMovement;
 
         private HealthSystem _healthSystem;
+        private static readonly int Death = Animator.StringToHash("Death");
         private void Start()
         {
              _healthSystem = new HealthSystem(enemyInfo.Health);
@@ -20,7 +24,9 @@ namespace Health
             }
             if (_healthSystem.GetHealth()<=0)
             {
-                Destroy(gameObject);
+                pathfindingMovement.speed = 0;
+                animator.SetTrigger(Death);
+                Destroy(gameObject,3f);
             }
         }
     }   

@@ -15,7 +15,6 @@ namespace Characters
       private bool _isRotationNavMeshAgent;
       private static readonly int Speed = Animator.StringToHash("Speed");
       private static readonly int LightAttack = Animator.StringToHash("LightAttack");
-      private static readonly int StopAttack = Animator.StringToHash("StopAttack");
 
       private void Start()
       {

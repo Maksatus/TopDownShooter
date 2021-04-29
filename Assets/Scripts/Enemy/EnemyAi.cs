@@ -7,6 +7,10 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private NavMeshAgent pathfindingMovement;
     [SerializeField] private EnemyAttack enemyAttack;
     [SerializeField] private EnemyInfo enemyInfo;
+    [SerializeField] private Animator animator;
+    
+    private static readonly int Speed = Animator.StringToHash("Speed");
+    private static readonly int LightAttack = Animator.StringToHash("Attack");
 
     private float _nextShootTimer;
     private enum State
@@ -43,7 +47,7 @@ public class EnemyAI : MonoBehaviour
             case State.ChaseTarget:
 
                 pathfindingMovement.SetDestination(Player.Instance.GetPosition());
-
+                AnimationCharacter();
                 if (Vector3.Distance(transform.position, Player.Instance.GetPosition()) < enemyInfo.AttackRange)
                 {
                     pathfindingMovement.isStopped = true;
@@ -55,7 +59,6 @@ public class EnemyAI : MonoBehaviour
                 }
                 else
                 {
-                    enemyAttack.isAtack(false);
                     pathfindingMovement.isStopped = false;
                 }
                 break;
@@ -74,5 +77,10 @@ public class EnemyAI : MonoBehaviour
         {
             _state = State.ChaseTarget;
         }
+    }
+    
+    private void AnimationCharacter()
+    {
+        animator.SetFloat(Speed,pathfindingMovement.velocity.magnitude);
     }
 }
