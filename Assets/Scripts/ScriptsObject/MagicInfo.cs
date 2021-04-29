@@ -13,7 +13,7 @@ public class MagicInfo : ScriptableObject
     [SerializeField] private float explosionRange;
     [SerializeField] private float lifeTime;
     [SerializeField] private float timeCast;
-    [SerializeField] private Vector3 spawOffset;
+    [SerializeField] private Vector3 spawnOffset;
     
     public string Id => this.id;
     public GameObject Projectile => projectile;
@@ -25,5 +25,5 @@ public class MagicInfo : ScriptableObject
     public float ExplosionRange => explosionRange;
     public float LifeTime => lifeTime;
     public float TimeCast => timeCast;
-    public Vector3 SpawOffset => spawOffset;
+    public Vector3 SpawnOffset => spawnOffset;
 }

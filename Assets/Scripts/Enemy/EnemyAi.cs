@@ -80,7 +80,8 @@ public class EnemyAI : MonoBehaviour
     }
     
     private void AnimationCharacter()
-    {animator.SetFloat(SpeedAnimation,enemyInfo.AnimationSpeed);
+    {
+        animator.SetFloat(SpeedAnimation,enemyInfo.AnimationSpeed);
         animator.SetFloat(Speed,pathfindingMovement.velocity.magnitude);
     }
 }

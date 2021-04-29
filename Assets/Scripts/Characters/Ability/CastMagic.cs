@@ -22,11 +22,13 @@ namespace Characters.Ability
         }
         private void InstantiateMagic(MagicInfo magicInfo)
         {
-            var position = startPoint.position + magicInfo.SpawOffset;
+            var position = startPoint.position + magicInfo.SpawnOffset;
             var magic = Instantiate(magicInfo.Projectile, position, Quaternion.identity);
-            magic.GetComponent<Rigidbody>().velocity = (_destination - position).normalized * magicInfo.Speed;
-
-            RandomMoveProjectile(magic,magicInfo.ArcRange);
+            if (magic.GetComponent<Rigidbody>()!=null)
+            {
+                magic.GetComponent<Rigidbody>().velocity = (_destination - position).normalized * magicInfo.Speed;
+                RandomMoveProjectile(magic,magicInfo.ArcRange);
+            }
         }
         private void RandomMoveProjectile(GameObject gameObject, float rangeTransform, float startTime = 0.2f, float endTime = 1f)
         {
