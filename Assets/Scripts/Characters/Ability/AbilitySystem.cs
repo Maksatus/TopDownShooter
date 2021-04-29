@@ -20,7 +20,7 @@ namespace Characters.Ability
         }
         private void Cast()
         {
-            if (Input.GetMouseButton(1) && Time.time >= _timeToFire[0])
+            if (Input.GetMouseButtonDown(1) && Time.time >= _timeToFire[0])
             {
                 _timeToFire[0] = Time.time + magicInfo[0].FireRate;
                 castMagic.ShootProjectile(magicInfo[0]);
@@ -31,8 +31,6 @@ namespace Characters.Ability
                 castMagic.ShootProjectile(magicInfo[1]);
             }
         }
-
     }
-    
 }
 

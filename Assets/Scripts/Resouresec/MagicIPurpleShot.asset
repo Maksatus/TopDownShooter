@@ -15,10 +15,11 @@ MonoBehaviour:
   id: PurpleShot
   projectile: {fileID: 333105859771712151, guid: 1eafa38bf39a5364f8299c75168326fe, type: 3}
   impact: {fileID: 6164224051104441654, guid: b803a4dc1218ed8469a8f412cfacbaa3, type: 3}
-  damage: 40
+  damage: 35
   speed: 30
-  fireRate: 0.5
+  fireRate: 0.7
   arcRange: 1
   explosionRange: 0
-  lifeTime: 5
-  timeCast: 0.1
+  lifeTime: 3
+  timeCast: 0.3
+  spawOffset: {x: 0.101, y: 0, z: 0.355}

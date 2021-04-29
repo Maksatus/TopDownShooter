@@ -15,5 +15,5 @@ MonoBehaviour:
   id: Main
   gameObject: {fileID: 657635957630372956, guid: 5d1e7a07aeb8329429e288c7110d6fd7, type: 3}
   speed: 3
-  angularSpeed: 400
-  acceleration: 500
+  angularSpeed: 500
+  acceleration: 999
