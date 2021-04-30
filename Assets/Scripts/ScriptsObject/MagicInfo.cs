@@ -16,6 +16,7 @@ public class MagicInfo : ScriptableObject
     [SerializeField] private float spawnOffset;
     [SerializeField] private bool isDestroyCollisionEnemy;
     [SerializeField] private bool isParent;
+    [SerializeField] private int price;
     
     public string Id => this.id;
     public GameObject Projectile => projectile;
@@ -30,4 +31,5 @@ public class MagicInfo : ScriptableObject
     public float SpawnOffset => spawnOffset;
     public bool IsDestroyCollisionEnemy => isDestroyCollisionEnemy;
     public bool IsParent => isParent;
+    public int Price => price;
 }

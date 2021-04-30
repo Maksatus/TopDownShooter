@@ -24,3 +24,5 @@ MonoBehaviour:
   timeCast: 0.5
   spawnOffset: 0
   isDestroyCollisionEnemy: 1
+  isParent: 0
+  price: 7

@@ -20,6 +20,6 @@ MonoBehaviour:
   damageValue: 5
   health: 100
   attackRange: 1
-  targetRange: 10
+  targetRange: 7
   impactSpeed: 2
   animationSpeed: 3

@@ -25,3 +25,4 @@ MonoBehaviour:
   spawnOffset: 3.5
   isDestroyCollisionEnemy: 0
   isParent: 0
+  price: 40
