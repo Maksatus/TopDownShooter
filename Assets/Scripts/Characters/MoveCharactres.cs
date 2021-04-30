@@ -4,6 +4,7 @@ namespace Characters
 {
    public class MoveCharactres : MonoBehaviour
    {
+      [SerializeField] private LayerMask layerMask;
       private Quaternion _rotation;
       private bool _isRotationNavMeshAgent;
       private Player _player;
@@ -56,7 +57,7 @@ namespace Characters
       private bool GettingPoint(out RaycastHit hitInfo)
       {
          var ray = _player.GetCameraMain().ScreenPointToRay(Input.mousePosition);
-         var hisSomething = Physics.Raycast(ray, out hitInfo);
+         var hisSomething = Physics.Raycast(ray, out hitInfo,layerMask);
 
          return !hisSomething;
       }
