@@ -32,6 +32,8 @@ namespace Characters.Ability
             {
                 _timeToFire[0] = Time.time + magicInfo[0].FireRate;
                 _player.GetAnimator().SetTrigger(LightAttack);
+                _abilityUI.CastUi(magicInfo[0].TimeCast);
+                _abilityUI.UseAbility(0,magicInfo[0].FireRate);
                 _player.GetCastMagic().ShootProjectile(magicInfo[0]);
             }
             else if (Input.GetKeyDown(KeyCode.Q) && Time.time >= _timeToFire[1])
@@ -42,15 +44,6 @@ namespace Characters.Ability
                 _abilityUI.CastUi(magicInfo[1].TimeCast);
                 _abilityUI.UseAbility(1,magicInfo[1].FireRate);
                 _player.GetCastMagic().ShootProjectile(magicInfo[1]);
-            }
-            else if (Input.GetKeyDown(KeyCode.R) && Time.time >= _timeToFire[2])
-            {
-                _timeToFire[2] = Time.time + magicInfo[2].FireRate;
-                _player.GetNavMeshAgent().isStopped = true;
-                _player.GetAnimator().SetTrigger(BlackHole);
-                _abilityUI.CastUi(magicInfo[2].TimeCast);
-                _abilityUI.UseAbility(2,magicInfo[2].FireRate);
-                _player.GetCastMagic().ShootProjectile(magicInfo[2]);
             }
         }
         private void MoveCharacter()

@@ -34,6 +34,11 @@ namespace Characters.Ability
             var position = _player.GetTransformStartPosition().position + (_player.GetTransformStartPosition().forward * magicInfo.SpawnOffset);
             Debug.Log(position);
             var magic = Instantiate(magicInfo.Projectile, position, Quaternion.identity);
+            if (magicInfo.IsParent)
+            {
+                magic.transform.SetParent(_player.GetTransformStartPosition());
+            }
+            
             if (magic.GetComponent<Rigidbody>()!=null)
             {
                 magic.GetComponent<Rigidbody>().velocity = (_destination - position).normalized * magicInfo.Speed;

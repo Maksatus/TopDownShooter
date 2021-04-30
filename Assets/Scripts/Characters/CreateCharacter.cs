@@ -1,3 +1,4 @@
+using System.Collections;
 using Cinemachine;
 using UnityEngine;
 
@@ -6,6 +7,9 @@ public class CreateCharacter : MonoBehaviour
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private CharacterInfo characterInfo;
     [SerializeField] private CinemachineVirtualCamera cameraMain;
+    [SerializeField] private float starTime = 8f;
+
+        private GameObject _player;
     private void Start()
     {
         Init();
@@ -13,7 +17,15 @@ public class CreateCharacter : MonoBehaviour
     [ContextMenu("InitCharacter")]
     public void Init()
     {
-        var character = Instantiate(characterInfo.GameObject,spawnPoint);
-        cameraMain.Follow = character.transform;
+         _player = Instantiate(characterInfo.GameObject,spawnPoint);
+        cameraMain.Follow = _player.transform;
+        _player.SetActive(false);
+        StartCoroutine(Wait());
+    }
+
+    private IEnumerator Wait()
+    {
+        yield return new WaitForSecondsRealtime(starTime);
+        _player.SetActive(true);
     }
 }

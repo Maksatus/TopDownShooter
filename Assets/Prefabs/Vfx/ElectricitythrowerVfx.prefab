@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2293525379799146214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 20403809819315328}
+  m_Layer: 8
+  m_Name: End
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &20403809819315328
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2293525379799146214}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.18, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2898578086949395820}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2898578086949395821
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,6 +41,9 @@ GameObject:
   - component: {fileID: 2898578086949395820}
   - component: {fileID: 2898578086949395822}
   - component: {fileID: 2898578086949395823}
+  - component: {fileID: 1271087775692804880}
+  - component: {fileID: 4587157907329329932}
+  - component: {fileID: 3349352416182104120}
   m_Layer: 8
   m_Name: ElectricitythrowerVfx
   m_TagString: Untagged
@@ -28,7 +61,8 @@ Transform:
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 20403809819315328}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -212,3 +246,48 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1271087775692804880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2898578086949395821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c837c5f39a540ae4f9be615ca8219240, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magicInfo: {fileID: 11400000, guid: 9897e5fb80f12984d863b22b5c0c5a6a, type: 2}
+--- !u!65 &4587157907329329932
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2898578086949395821}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2321958, y: 1.472833, z: 2.0000005}
+  m_Center: {x: -4.421149, y: 0.23641664, z: -5.9848976e-15}
+--- !u!114 &3349352416182104120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2898578086949395821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2c8018f235def64381caf231494ad2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magicInfo: {fileID: 11400000, guid: 9897e5fb80f12984d863b22b5c0c5a6a, type: 2}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  results: []
+  maxEnemyForce: 10
+  end: {fileID: 20403809819315328}

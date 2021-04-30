@@ -19,8 +19,9 @@ MonoBehaviour:
   speed: 0
   fireRate: 10
   arcRange: 0
-  explosionRange: 5
+  explosionRange: 7
   lifeTime: 5
   timeCast: 2
   spawnOffset: 3.5
   isDestroyCollisionEnemy: 0
+  isParent: 0
