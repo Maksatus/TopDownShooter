@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Characters.Ability
@@ -7,7 +6,7 @@ namespace Characters.Ability
     {
         [SerializeField] private MagicInfo[] magicInfo;
         [SerializeField] private CastMagic castMagic;
-        
+
         private float[] _timeToFire;
 
         private void Start()
@@ -28,6 +27,7 @@ namespace Characters.Ability
             else if (Input.GetKeyDown(KeyCode.Q) && Time.time >= _timeToFire[1])
             {
                 _timeToFire[1] = Time.time + magicInfo[1].FireRate;
+                AbilityUI.Instance.UseAbility(1,magicInfo[1].FireRate);
                 castMagic.ShootProjectile(magicInfo[1]);
             }
         }

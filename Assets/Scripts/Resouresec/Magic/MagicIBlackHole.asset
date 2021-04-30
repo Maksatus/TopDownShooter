@@ -19,7 +19,7 @@ MonoBehaviour:
   speed: 0
   fireRate: 3
   arcRange: 0
-  explosionRange: 7
+  explosionRange: 5
   lifeTime: 5
   timeCast: 0
   spawnOffset: {x: 0, y: 0, z: 4}

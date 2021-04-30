@@ -8,7 +8,6 @@ public class CreateCharacter : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera cameraMain;
     private void Start()
     {
-        
         Init();
     }
     [ContextMenu("InitCharacter")]
