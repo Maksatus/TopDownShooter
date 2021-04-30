@@ -55,8 +55,7 @@ MonoBehaviour:
   characterInfo: {fileID: 11400000, guid: 57ab2ae6592430d46abc727214043c1e, type: 2}
   navMeshAgent: {fileID: 5782711036840053711}
   cameraMain: {fileID: 0}
-  speedRotate: 6
-  animator: {fileID: 2223178062770777396}
+  speedRotate: 7
 --- !u!114 &-2168149431856800734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,6 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPoint: {fileID: 734991214166463833}
+  navMeshAgent: {fileID: 5782711036840053711}
 --- !u!114 &8202163203669635525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,8 +85,6 @@ MonoBehaviour:
   magicInfo:
   - {fileID: 11400000, guid: 038b51b7cfac6114491582abdbdaf495, type: 2}
   - {fileID: 11400000, guid: 26811b9c415e31741b9ef51b92968b69, type: 2}
-  castMagic: {fileID: -2168149431856800734}
-  abilityUI: {fileID: 4295708349069457840, guid: 3ddf42ad1f4d3b0488c3155e467b8a63, type: 3}
 --- !u!114 &3778587226764993471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,6 +98,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerLives: {fileID: 5154992741462858512}
+  castMagic: {fileID: -2168149431856800734}
+  animator: {fileID: 2223178062770777396}
+  characterInfo: {fileID: 11400000, guid: 57ab2ae6592430d46abc727214043c1e, type: 2}
+  cameraMain: {fileID: 0}
+  speedRotate: 6
+  startPoint: {fileID: 734991214166463833}
+  navMeshAgent: {fileID: 5782711036840053711}
 --- !u!114 &5154992741462858512
 MonoBehaviour:
   m_ObjectHideFlags: 0

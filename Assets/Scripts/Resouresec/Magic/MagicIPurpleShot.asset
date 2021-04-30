@@ -22,4 +22,5 @@ MonoBehaviour:
   explosionRange: 0
   lifeTime: 3
   timeCast: 0.5
-  spawOffset: {x: 0, y: 0, z: 0}
+  spawnOffset: 0
+  isDestroyCollisionEnemy: 1

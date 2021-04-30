@@ -17,9 +17,10 @@ MonoBehaviour:
   impact: {fileID: 8289591389176598467, guid: 7e3198512cdb50649b2739a25c0b1699, type: 3}
   damage: 50
   speed: 0
-  fireRate: 3
+  fireRate: 10
   arcRange: 0
   explosionRange: 5
   lifeTime: 5
-  timeCast: 0
-  spawnOffset: {x: 0, y: 0, z: 4}
+  timeCast: 2
+  spawnOffset: 5
+  isDestroyCollisionEnemy: 0

@@ -13,7 +13,7 @@ public class Projectile : MonoBehaviour
     private void OnDisable()
     {
         StopCoroutine(LifeRoutine());
-        Destroy(gameObject);
+        Destroy(gameObject,1f);
     }
 
     private IEnumerator LifeRoutine()
@@ -32,6 +32,10 @@ public class Projectile : MonoBehaviour
         {
             var impact = Instantiate(magicInfo.Impact, other.contacts[0].point, Quaternion.identity);
             Destroy(impact,2f);
+            if (magicInfo.IsDestroyCollisionEnemy)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

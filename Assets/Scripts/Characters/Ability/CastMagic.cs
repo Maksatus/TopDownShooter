@@ -5,24 +5,34 @@ namespace Characters.Ability
 {
     public class CastMagic : MonoBehaviour
     {
-        [SerializeField] private Transform startPoint;
+        private Player _player;
 
         private Vector3 _destination;
+        private void Start()
+        {
+            _player = Player.Instance;
+        }
 
         public void ShootProjectile(MagicInfo magicInfo)
         {
             StartCoroutine(ToWait(magicInfo));
         }
         private IEnumerator ToWait(MagicInfo magicInfo)
-        { 
+        {
             yield return new WaitForSecondsRealtime(magicInfo.TimeCast);
-            var ray = new Ray(startPoint.position, startPoint.forward);
-            _destination = Physics.Raycast(ray,out var hit) ? hit.point : ray.GetPoint(50f);
+            if (_player.GetNavMeshAgent().velocity.magnitude>0.1f)
+            {
+                yield break;
+            }
+            var ray = new Ray(_player.GetTransformStartPosition().position, _player.GetTransformStartPosition().forward);
+            _destination = Physics.Raycast(ray, out var hit) ? hit.point : ray.GetPoint(50f);
             InstantiateMagic(magicInfo);
-        }
+            
+    }
         private void InstantiateMagic(MagicInfo magicInfo)
         {
-            var position = startPoint.position + magicInfo.SpawnOffset;
+            var position = _player.GetTransformStartPosition().position + (_player.GetTransformStartPosition().forward * magicInfo.SpawnOffset);
+            Debug.Log(position);
             var magic = Instantiate(magicInfo.Projectile, position, Quaternion.identity);
             if (magic.GetComponent<Rigidbody>()!=null)
             {
