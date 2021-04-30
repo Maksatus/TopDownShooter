@@ -12,10 +12,12 @@ namespace Characters.Ability
 
         private float[] _timeToFire;
         private Player _player;
+        private AbilityUI _abilityUI;
 
         private void Start()
         {
             _player = Player.Instance;
+            _abilityUI = AbilityUI.Instance;;
             _timeToFire = new float[magicInfo.Length];
         }
         private void Update()
@@ -36,7 +38,8 @@ namespace Characters.Ability
                 _timeToFire[1] = Time.time + magicInfo[1].FireRate;
                 _player.GetNavMeshAgent().isStopped = true;
                 _player.GetAnimator().SetTrigger(BlackHole);
-                AbilityUI.Instance.UseAbility(1,magicInfo[1].FireRate);
+                _abilityUI.CastUi(magicInfo[1].TimeCast);
+                _abilityUI.UseAbility(1,magicInfo[1].FireRate);
                 _player.GetCastMagic().ShootProjectile(magicInfo[1]);
             }
         }
